@@ -26,8 +26,8 @@
  *
  *****************************************************************************/
 
-#include "hybmatrix.hpp"
-#include "nfft3.h"
+#include "./hybmatrix.hpp"
+#include <nfft3.h>
 
 //compute the hybridization weight change when an operator pair is inserted
 void hybmatrix::measure_Gw(std::vector<double> &Gwr, std::vector<double> &Gwi , std::vector<double> &Fwr, std::vector<double> &Fwi , const std::map<double,double> &F_prefactor, double sign) const{

@@ -30,10 +30,10 @@
 
 #include <alps/mc/mcbase.hpp>
 #include <alps/utilities/signal.hpp>
-#include "green_function.h"
-#include "hybsegment.hpp"
-#include "hyblocal.hpp"
-#include "hybconfig.hpp"
+#include "../utility/green_function.h"
+#include "../state/hyblocal/hybsegment.hpp"
+#include "../state/hyblocal/hyblocal.hpp"
+#include "../state/hybconfig.hpp"
 
 
 #ifdef HYB_SIM_MAIN

@@ -28,8 +28,8 @@
  *****************************************************************************/
 
 #include <boost/local_function.hpp>
-#include"hyb.hpp"
-#include<alps/numeric/vector_functions.hpp>
+#include "./hyb.hpp"
+#include <alps/numeric/vector_functions.hpp>
 
 using alps::accumulators::max_bin_number;
 

@@ -26,8 +26,8 @@
  *
  *****************************************************************************/
 #include <iomanip>
-#include"hyb.hpp"
-#include"hyblocal.hpp"
+#include "./hyb.hpp"
+#include "../state/hyblocal/hyblocal.hpp"
 
 //this is the heart of the Monte Carlo procedure: we have the following updates:
 //1: change the zero order state, swap an empty orbital versus a filled one

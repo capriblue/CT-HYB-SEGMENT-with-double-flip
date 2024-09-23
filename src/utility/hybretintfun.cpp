@@ -26,7 +26,7 @@
  *
  *****************************************************************************/
 
-#include"hybretintfun.hpp"
+#include "./hybretintfun.hpp"
 //construct a retarded interaction function. ntime: number of time slices.
 //noffidag_orbitals: number of offdiagonal orbitals. ndiag_orbitals: number
 //of diagonal orbitals. 

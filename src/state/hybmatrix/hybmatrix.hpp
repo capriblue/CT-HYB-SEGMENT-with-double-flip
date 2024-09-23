@@ -30,9 +30,9 @@
 #define HYB_MATRIX
 #include<map>
 #include<vector>
-#include "hybsegment.hpp"
-#include "hybfun.hpp"
-#include "hybblasmatrix.hpp"
+#include "../hyblocal/hybsegment.hpp"
+#include "../../model/hybfun.hpp"
+#include "./hybblasmatrix.hpp"
 
 //This is the hybridization matrix class responsible for computing determinant ratios and the like. Derived from a general blas matrix class that can handle elementary blas and lapack operations.
 

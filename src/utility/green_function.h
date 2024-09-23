@@ -29,7 +29,7 @@
 
 #ifndef GREEN_FUNCTION_H
 #define GREEN_FUNCTION_H
-#include "types.h"
+#include "./types.h"
 #include <fstream>
 #include <iostream>
 #include <cstring>
@@ -210,7 +210,7 @@ std::ostream &operator<<(std::ostream &os, const green_function<std::complex<dou
 std::istream &operator>>(std::istream &is, green_function<std::complex<double> > &v);
 
 ///compute kinetic energy
-double kinetic_energy(const multiple_vector_type &G_tau, const double &beta, const double &t);
+// double kinetic_energy(const multiple_vector_type &G_tau, const double &beta, const double &t);
 
 template<typename T> void green_function<T>::read(const char *filename){
   std::ifstream in_file(filename);

@@ -26,7 +26,7 @@
  *
  *****************************************************************************/
 
-#include"hybint.hpp"
+#include "./hybint.hpp"
 
 
 interaction_matrix::interaction_matrix(const alps::params &p){

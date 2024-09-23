@@ -26,7 +26,7 @@
  *
  *****************************************************************************/
 #pragma once
-#include "blasheader.h"
+#include "./blasheader.h"
 
 //This is the resizable square matrix class. Whoever adapted the version in ALPS f*ed it up badly: this matrix needs to have a memory size DIFFERENT from the current size, or we'll be asking for memory all the time!
 

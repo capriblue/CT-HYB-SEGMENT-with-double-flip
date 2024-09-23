@@ -28,8 +28,8 @@
  *****************************************************************************/
 
 #include <ctime>
-#include "hyb.hpp"
-#include "hybevaluate.hpp"
+#include "./monte_carlo_definiton/hyb.hpp"
+#include "./evaluation/hybevaluate.hpp"
 #include <boost/bind.hpp>
 
 #ifdef ALPS_HAVE_MPI
@@ -101,23 +101,4 @@ int main(int argc, char* argv[]){
       std::cerr << "Fatal Error: Unknown Exception!\n";
       return -2;
     }
-}
-
-
-void master_final_tasks(const alps::results_type<hybridization>::type &results,
-                        const alps::parameters_type<hybridization>::type &parameters,
-                        const std::string &output_name){
-  //do some post processing: collect Green functions and write
-  //them into hdf5 files; calls compute vertex at the very end
-
-  alps::hdf5::archive solver_output(output_name, "a");
-
-  evaluate_basics(results,parameters,solver_output);
-  evaluate_gtau(results,parameters,solver_output);
-  evaluate_freq(results,parameters,solver_output);
-  evaluate_legendre(results,parameters,solver_output);
-  evaluate_nnt(results,parameters,solver_output);
-  evaluate_nnw(results,parameters,solver_output);
-  evaluate_sector_statistics(results,parameters,solver_output);
-  evaluate_2p(results, parameters, solver_output);
 }

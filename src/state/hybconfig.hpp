@@ -28,9 +28,9 @@
 #ifndef HYB_CONFIG_HPP
 #define HYB_CONFIG_HPP
 
-#include"hybfun.hpp"
-#include"hybsegment.hpp"
-#include"hybmatrix.hpp"
+#include "../model/hybfun.hpp"
+#include "./hyblocal/hybsegment.hpp"
+#include "./hybmatrix/hybmatrix.hpp"
 //this class knows everything to do with hybridization / bath operators.
 //determinants of hybridization matrices, rank one updates, and so on.
 //this is where \det \Delta is implemented.

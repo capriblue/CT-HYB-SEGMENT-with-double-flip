@@ -26,7 +26,7 @@
  *
  *****************************************************************************/
 
-#include"hybconfig.hpp"
+#include "./hybconfig.hpp"
 
 hybridization_configuration::hybridization_configuration(const alps::params &p):
   Delta(p),
