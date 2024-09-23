@@ -25,9 +25,8 @@
  * DEALINGS IN THE SOFTWARE.
  *
  *****************************************************************************/
-#ifndef HYB_HPP
-#define HYB_HPP
 
+#pragma once 
 #include <alps/mc/mcbase.hpp>
 #include <alps/utilities/signal.hpp>
 #include "../utility/green_function.h"
@@ -36,15 +35,9 @@
 #include "../state/hybconfig.hpp"
 
 
-#ifdef HYB_SIM_MAIN
-std::vector<int64_t> nacc,nprop;
-int64_t nsweeps;
-std::vector<std::string> update_type;
-#else
-extern std::vector<int64_t> nacc,nprop;
-extern int64_t nsweeps;
-extern std::vector<std::string> update_type;
-#endif
+inline std::vector<int64_t> nacc,nprop;
+inline int64_t nsweeps;
+inline std::vector<std::string> update_type;
 
 
 class hybridization:public alps::mcbase
@@ -199,6 +192,4 @@ std::ostream &operator<<(std::ostream &os, const hybridization &hyb);
 #define clmagenta "\033[01;35m"
 #define clcyan "\033[01;36m"
 #define cwhite "\033[01;37m"
-#endif
-
 #endif

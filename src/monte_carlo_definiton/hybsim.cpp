@@ -26,9 +26,9 @@
  * DEALINGS IN THE SOFTWARE.
  *
  *****************************************************************************/
-#ifndef HYB_SIM_MAIN
-#define HYB_SIM_MAIN
-#endif
+// #ifndef HYB_SIM_MAIN
+// #define HYB_SIM_MAIN
+// #endif
 
 #include <iomanip>
 #include "./hyb.hpp"

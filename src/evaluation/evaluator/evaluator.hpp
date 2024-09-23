@@ -7,6 +7,7 @@
 #include <alps/mc/api.hpp>
 
 #include "../../utility/green_function.h"
+#include "../../monte_carlo_definiton/hyb.hpp"
 
 void evaluate_basics(const alps::accumulators::result_set &results, const alps::params &parms, alps::hdf5::archive &solver_output);
 void evaluate_gtau(const alps::accumulators::result_set &results, const alps::params &parms, alps::hdf5::archive &solver_output);

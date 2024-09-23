@@ -27,25 +27,22 @@ find_package(NFFT)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_DISABLE_ASSERTS -DNDEBUG")
 
+file(GLOB_RECURSE HEADER_DIRS "src/*")  # src以下のすべてのディレクトリを収集
+foreach(HEADER_DIR ${HEADER_DIRS})
+    if(IS_DIRECTORY ${HEADER_DIR})
+        include_directories(${HEADER_DIR})  # ディレクトリをインクルードパスに追加
+    endif()
+endforeach()
+
 include_directories(
-    ${CMAKE_SOURCE_DIR}/src
+    ${HEADER_FILES}
     ${CMAKE_BINARY_DIR}
     ${MPI_CXX_INCLUDE_PATH}
     ${NFFT3_INCLUDE_DIRS}
 )
 
-set (ALPS_CTHYB_SOURCE
-   src/hybsim.cpp
-   src/hyblocal.cpp
-   src/hybint.cpp
-   src/hybfun.cpp
-   src/hybretintfun.cpp
-   src/hybmatrix.cpp
-   src/hybmatrix_nfft.cpp
-   src/hybconfig.cpp
-   src/hybupdates.cpp
-   src/hybevaluate.cpp
-   src/hybmeasurements.cpp)
+file(GLOB_RECURSE ALPS_CTHYB_SOURCE "src/**/*.cpp")
+
 add_library(alps_hyb_exp ${ALPS_CTHYB_SOURCE})
 target_link_libraries(alps_hyb_exp ${ALPSCore_LIBRARIES} ${MPI_CXX_LIBRARIES} ${NFFT3_LIBRARIES})
 set_target_properties(alps_hyb_exp PROPERTIES POSITION_INDEPENDENT_CODE ON)

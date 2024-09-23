@@ -28,8 +28,8 @@
  *
  *****************************************************************************/
 
-#include"hyb.hpp"
-#include"hybevaluate.hpp"
+#include "../monte_carlo_definiton/hyb.hpp"
+#include "./hybevaluate.hpp"
 
 void master_final_tasks(const alps::results_type<hybridization>::type &results,
                         const alps::parameters_type<hybridization>::type &parameters,
