@@ -23,7 +23,7 @@ find_package(ALPSCore COMPONENTS accumulators params mc hdf5 gf)
 find_package(BLAS REQUIRED)
 find_package(LAPACK REQUIRED)
 find_package(MPI)
-find_package(NFFT)
+find_package(NFFT3)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_DISABLE_ASSERTS -DNDEBUG")
 
