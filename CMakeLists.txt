@@ -20,37 +20,38 @@ set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
 # Request the ALPSCore package:
 find_package(ALPSCore COMPONENTS accumulators params mc hdf5 gf)
-find_package(LAPACK)
+find_package(BLAS REQUIRED)
+find_package(LAPACK REQUIRED)
 find_package(MPI)
 find_package(NFFT)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DBOOST_DISABLE_ASSERTS -DNDEBUG")
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_BINARY_DIR}
     ${MPI_CXX_INCLUDE_PATH}
     ${NFFT3_INCLUDE_DIRS}
 )
 
 set (ALPS_CTHYB_SOURCE
-   hybsim.cpp
-   hyblocal.cpp
-   hybint.cpp
-   hybfun.cpp
-   hybretintfun.cpp
-   hybmatrix.cpp
-   hybmatrix_nfft.cpp
-   hybconfig.cpp
-   hybupdates.cpp
-   hybevaluate.cpp
-   hybmeasurements.cpp)
+   src/hybsim.cpp
+   src/hyblocal.cpp
+   src/hybint.cpp
+   src/hybfun.cpp
+   src/hybretintfun.cpp
+   src/hybmatrix.cpp
+   src/hybmatrix_nfft.cpp
+   src/hybconfig.cpp
+   src/hybupdates.cpp
+   src/hybevaluate.cpp
+   src/hybmeasurements.cpp)
 add_library(alps_hyb_exp ${ALPS_CTHYB_SOURCE})
 target_link_libraries(alps_hyb_exp ${ALPSCore_LIBRARIES} ${MPI_CXX_LIBRARIES} ${NFFT3_LIBRARIES})
 set_target_properties(alps_hyb_exp PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 set(EXEC_NAME alps_cthyb)
-add_executable(${EXEC_NAME} hybmain.cpp)
+add_executable(${EXEC_NAME} src/hybmain.cpp)
 target_link_libraries(${EXEC_NAME} alps_hyb_exp ${ALPSCore_LIBRARIES} ${LAPACK_LIBRARIES})
 set_target_properties(${EXEC_NAME} PROPERTIES POSITION_INDEPENDENT_CODE ON)
 install (TARGETS ${EXEC_NAME} DESTINATION bin )

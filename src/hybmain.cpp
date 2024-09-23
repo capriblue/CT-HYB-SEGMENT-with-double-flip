@@ -44,7 +44,7 @@ bool stop_callback(const time_t end_time) {
   static alps::signal signal;
   return !signal.empty() || time(0) > end_time;
 }
-void master_final_tasks(const alps::results_type<hybridization>::type &results, const alps::parameters_type<hybridization>::type &parameters, const std::string &output_name);
+
 int global_mpi_rank;
 
 int main(int argc, char* argv[]){
